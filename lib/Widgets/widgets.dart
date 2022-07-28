@@ -45,4 +45,39 @@ class Widgets {
       ],
     );
   }
+
+
+  AppBar productAppBar(BuildContext context) {
+    return AppBar(
+      elevation: 0,
+      backgroundColor: kSecondaryColor,
+      leading: IconButton(
+        onPressed: () {
+          Navigator.pop(context);
+        },
+        icon: const Icon(
+          Icons.arrow_back,
+          color: kWhiteColor,
+        ),
+      ),
+      actions: [
+        IconButton(
+          onPressed: () {},
+          icon: const Icon(
+            Icons.thumb_up,
+            color: kWhiteColor,
+          ),
+        ),
+        IconButton(
+          onPressed: () {},
+          icon: const Icon(
+            Icons.more_vert,
+            color: kWhiteColor,
+          ),
+        ),
+      ],
+    );
+  }
+
+
 }

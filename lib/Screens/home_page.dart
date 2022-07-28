@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:food_ordering_ui_app/Screens/product_page.dart';
 import 'package:food_ordering_ui_app/Widgets/category_item.dart';
 import 'package:food_ordering_ui_app/Widgets/scrollable_food.dart';
 import 'package:food_ordering_ui_app/Widgets/search_widget.dart';
@@ -29,31 +30,43 @@ class _HomePageState extends State<HomePage> {
       'foodName': 'Burger & Beer',
       'foodDescription': 'MacDonald\'s',
       'foodImage': 'assets/images/Burger.png',
+      'star': 4.9,
+      'reviews' : 30
     },
     {
       'foodName': 'Turkey',
       'foodDescription': 'MacDonald\'s',
       'foodImage': 'assets/images/turkey_food_PNG14.png',
+      'star': 4.0,
+      'reviews' : 28
     },
     {
       'foodName': 'Burger & Beer',
       'foodDescription': 'MacDonald\'s',
       'foodImage': 'assets/images/Burger.png',
+      'star': 3.9,
+      'reviews' : 50
     },
     {
       'foodName': 'Turkey',
       'foodDescription': 'MacDonald\'s',
       'foodImage': 'assets/images/turkey_food_PNG14.png',
+      'star': 4.5,
+      'reviews' : 47
     },
     {
       'foodName': 'Burger & Beer',
       'foodDescription': 'MacDonald\'s',
       'foodImage': 'assets/images/Burger.png',
+      'star': 4.3,
+      'reviews' : 10
     },
     {
       'foodName': 'Turkey',
       'foodDescription': 'MacDonald\'s',
       'foodImage': 'assets/images/turkey_food_PNG14.png',
+      'star': 4.7,
+      'reviews' : 30
     }
   ];
 
@@ -105,10 +118,21 @@ class _HomePageState extends State<HomePage> {
                     shrinkWrap: true,
                     itemBuilder: (context, index) {
                       final food = foods[index];
-                      return ScrollableFood(
-                        foodName: food['foodName'],
-                        foodDescription: food['foodDescription'],
-                        foodImage: food['foodImage'],
+                      return GestureDetector(
+                        onTap: (() {
+                          Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  ProductPage(foodDetail: food),
+                            ),
+                          );
+                        }),
+                        child: ScrollableFood(
+                          foodName: food['foodName'],
+                          foodDescription: food['foodDescription'],
+                          foodImage: food['foodImage'],
+                        ),
                       );
                     }),
               ),
