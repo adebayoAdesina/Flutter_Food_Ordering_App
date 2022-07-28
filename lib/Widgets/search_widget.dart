@@ -5,13 +5,14 @@ import '../Util/colors.dart';
 class SearchWidget extends StatelessWidget {
   final ValueChanged<String> onChange;
   const SearchWidget({
-    Key? key, required this.onChange,
+    Key? key,
+    required this.onChange,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.all(20),
+      margin: const EdgeInsets.only(left: 20, right: 20.0, bottom: 20.0),
       padding: const EdgeInsets.symmetric(horizontal: 25, vertical: 5),
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(50.0),

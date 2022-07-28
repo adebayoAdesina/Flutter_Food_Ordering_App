@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:food_ordering_ui_app/Screens/home_page.dart';
+import 'package:food_ordering_ui_app/Screens/tabs.dart';
 import 'package:food_ordering_ui_app/Util/colors.dart';
 
 void main() {
@@ -23,7 +23,7 @@ class MyApp extends StatelessWidget {
         ),
         // appBarTheme: AppBarTheme(color: kPrimaryColor),
       ),
-      home: const HomePage(),
+      home: const Tabs(),
     );
   }
 }
